@@ -1,0 +1,21 @@
+version: "2"
+
+services:
+  db:
+    image: postgres:9.6-alpine
+    volumes:
+        - postgresql-data:/var/lib/postgresql
+    volumes:
+      - "postgresql-data:/var/lib/postgresql"
+  main:
+    image: elixir
+    hostname: main
+    volumes:
+      - ".:/app"
+    ports:
+      - "3001:3001"
+      - "3000:3000"
+    command: sh -c 'tail -f /dev/null'
+volumes:
+  postgresql-data:
+
