@@ -15,7 +15,7 @@ defmodule Example.Mixfile do
   def application do
     [
       extra_applications: [:logger],
-      mod: {Example, []}
+      mod: {Example, [:httpotion]}
     ]
   end
 
@@ -24,6 +24,7 @@ defmodule Example.Mixfile do
     [
       {:cowboy, "~> 1.1.2"},
       {:plug, "~> 1.3.4"},
+      {:httpotion, "~> 3.0.2"},
     ]
   end
 end
